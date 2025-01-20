@@ -69,7 +69,7 @@ router.post('/login', async(req, res) =>{
 
     } catch(error){
         console.error(error);
-        res.status(500).send('Server error');
+        res.status(500).send({msg: "Server Error", error: error.name});
     }
 });
 export { router as authRouter};
