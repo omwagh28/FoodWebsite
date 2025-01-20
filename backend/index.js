@@ -17,13 +17,13 @@ config();
 
 const app = express();
 
-// CORS configuration
-const corsOptions = {
-  origin: 'https://food-website-6aw2-mi9uqn19l-omwagh28s-projects.vercel.app', // Your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true, // Include credentials if needed
-};
-app.use(cors(corsOptions));  // Apply CORS options
+
+app.use(cors({
+    origin: '*',            
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+    allowedHeaders: '*'     
+  }));
+   // Apply CORS options
 
 app.use(express.json());
 
