@@ -12,7 +12,7 @@ const Home = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get(`${ VITE_REACT_APP_BACKEND_BASEURL }/food`)
+            .get(`${ import.meta.env.VITE_REACT_APP_BACKEND_BASEURL }/food`)
             .then((response) => {
                 setFood(response.data.data);
                 setLoading(false);

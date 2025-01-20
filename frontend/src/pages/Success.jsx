@@ -11,7 +11,7 @@ const Success = () => {
 
   const postOrderToDatabase = async (postData) => {
     try {
-      const response = await fetch(`${ VITE_REACT_APP_BACKEND_BASEURL }/order`, {
+      const response = await fetch(`${ import.meta.env.VITE_REACT_APP_BACKEND_BASEURL }/order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ const Success = () => {
   useEffect(() => {
     const fetchSessionDetails = async () => {
       try {
-        const response = await fetch(`${ VITE_REACT_APP_BACKEND_BASEURL }/stripe/api/session/${session_id}`);
+        const response = await fetch(`${ import.meta.env.VITE_REACT_APP_BACKEND_BASEURL }/stripe/api/session/${session_id}`);
         if (!response.ok) {
           throw new Error('Response was not ok');
         }

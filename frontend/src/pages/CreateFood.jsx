@@ -49,7 +49,7 @@ const CreateFood = () => {
         data.append('file', img);
 
         try {
-            const uploadUrl = `${ VITE_REACT_APP_BACKEND_BASEURL }/upload-image`;
+            const uploadUrl = `${ import.meta.env.VITE_REACT_APP_BACKEND_BASEURL }/upload-image`;
             const res = await axios.post(uploadUrl, data, {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -110,8 +110,8 @@ const CreateFood = () => {
                     'Authorization': `Bearer ${token}`
                 }
             };
-
-            console.log(import.meta.env.VITE_REACT_APP_BACKEND_BASEURL);
+// 
+            // console.log(import.meta.env.VITE_REACT_APP_BACKEND_BASEURL);
 
             await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/food`, formData, config);
 

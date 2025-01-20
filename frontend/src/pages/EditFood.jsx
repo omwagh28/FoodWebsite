@@ -19,7 +19,7 @@ const EditFood = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get(`${ VITE_REACT_APP_BACKEND_BASEURL }/food/${id}`)
+            .get(`${ import.meta.env.VITE_REACT_APP_BACKEND_BASEURL }/food/${id}`)
             .then((response) => {
                 setName(response.data.name);
                 setPriceInCents(response.data.priceInCents);
@@ -36,7 +36,7 @@ const EditFood = () => {
         const data = { name, priceInCents };
         setLoading(true);
         axios
-            .put(`${ VITE_REACT_APP_BACKEND_BASEURL }/food/${id}`, data)
+            .put(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL  }/food/${id}`, data)
             .then(() => {
                 setLoading(false);
                 enqueueSnackbar('Food edited succesfully', {variant:'success'});

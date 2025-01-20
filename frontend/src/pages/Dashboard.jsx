@@ -12,7 +12,7 @@ const Dashboard = () => {
         setLoading(true);
 
         axios
-            .get(`${VITE_REACT_APP_BACKEND_BASEURL}/order`)
+            .get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/order`)
             .then((response) => {
                 setOrders(response.data);
                 setLoading(false);

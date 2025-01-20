@@ -39,7 +39,7 @@ const Register = () => {
                 }
             };
 
-            await axios.post(`${ VITE_REACT_APP_BACKEND_BASEURL }/auth/register`,
+            await axios.post(`${ import.meta.env.VITE_REACT_APP_BACKEND_BASEURL }/auth/register`,
         {
             name: userData.name,
             email: userData.email,

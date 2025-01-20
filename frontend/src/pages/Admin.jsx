@@ -7,11 +7,12 @@ const Admin = () => {
   const [food, setFood] = useState([]);
 
   const [loading, setLoading] = useState([]);
+  // console.log(process.env.VITE_REACT_APP_BACKEND_BASEURL)
 
   useEffect(() =>{
     setLoading(true);
     axios
-    .get(`${VITE_REACT_APP_BACKEND_BASEURL}/food`)
+    .get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/food`)
     .then((response) =>{
       setFood(response.data.data);
       setLoading(false);

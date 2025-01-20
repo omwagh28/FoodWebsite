@@ -24,7 +24,7 @@ const DeleteOrder = () => {
         setLoading(true);
 
         axios
-            .delete(`${ VITE_REACT_APP_BACKEND_BASEURL }/order/${id}`, config)
+            .delete(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL  }/order/${id}`, config)
             .then(() => {
                 setLoading(false);
                 enqueueSnackbar('Order deleted succesfully', {variant:'success'});

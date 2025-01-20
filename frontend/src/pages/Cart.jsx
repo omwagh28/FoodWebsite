@@ -24,7 +24,7 @@ const Cart = () => {
         }))
 
         try {
-            const response = await axios.post(`${process.env.}/stripe/create-checkout-session`, {
+            const response = await axios.post(`${ import.meta.env.VITE_REACT_APP_BACKEND_BASEURL }/stripe/create-checkout-session`, {
                 products: transformedItems
             })
 

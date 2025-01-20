@@ -17,7 +17,7 @@ const DeleteFood = () => {
       setLoading(true);
 
       axios
-          .delete(`${ VITE_REACT_APP_BACKEND_BASEURL}/food/${id}`)
+          .delete(`${ import.meta.env.VITE_REACT_APP_BACKEND_BASEURL }/food/${id}`)
           .then(() => {
               setLoading(false);
               enqueueSnackbar('Food Deleted', {variant:'success'});
